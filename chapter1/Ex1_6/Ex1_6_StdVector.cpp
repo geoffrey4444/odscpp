@@ -40,7 +40,11 @@ int main(void) {
   std::cout << "List after setting element 1 to 4444: "
             << string_from_vector(list) << " (size " << list.size() << ")\n";
 
-  constexpr size_t big_length = 400000;
+  list.insert(list.begin() + 3, -4444);
+  std::cout << "List after inserting -444 at position 3: "
+            << string_from_vector(list) << " (size " << list.size() << ")\n";
+
+  constexpr size_t big_length = 1000000000;
   std::vector<int> big_list{};
   for (size_t i = 0; i < big_length; ++i) {
     big_list.insert(big_list.begin() + i, static_cast<int>(4 * i));
